@@ -1,26 +1,41 @@
+import java.util.Scanner;
+
 public class Contact
 {
     //variables
-    private String name; //Must be all letters
+    private String firstName; //Must be all letter
+    private String lastName;
     private String number;//in format (xxx)xxx-xxxx
     private String email;//in format (any amount of chars)@(any amount of chars).com
     //constructor
-    public Contact(String name, String number, String email)
+    public Contact(String firstName, String lastName, String number, String email)
     {
-        this.name = name;
+        this.firstName = checkFirstName(firstName);
+        this.lastName = lastName;
         this.number = number;
         this.email = email;
     }//end constructor
     //getters/setters
 
     //getters
-    public String getName() { return name; }
+    public String getFirstName() { return firstName; }
+
+    public String getLastName() {
+        return lastName;
+    }
+
     public String getNumber() { return number; }
     public String getEmail() { return email; }
 
     //setters
-    public void setName(String name) {
-        this.name = name;
+
+
+    public void setFirstName(String firstName) {
+        this.firstName = checkFirstName(firstName);
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public void setNumber(String number) {
@@ -32,11 +47,22 @@ public class Contact
     }
     //brain methods - validation
 
+    private String checkFirstName(String name)
+    {
+        Scanner scan = new Scanner(System.in);
+        while(!name.matches("[A-Z][a-z]+"))
+        {
+            System.out.println("Invalid input, try again");
+            name = scan.next();
+        }
+        return name;
+    }
+
     //tostring
     public String toString()
     {
         String output;
-        output  = "NAME: " + name;
+        output  = "NAME: " + firstName + " " + lastName;
         output += "\nNUMBER: " + number;
         output += "\nEMAIL: " + email;
         output += "\n-------------------------------";
