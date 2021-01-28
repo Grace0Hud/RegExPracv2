@@ -16,4 +16,12 @@ public class Contacts
     //brain methods - validation
 
     //tostring
+    public String toString()
+    {
+        String output;
+        output  = "NAME: " + name;
+        output += "NUMBER: " + number;
+        output += "EMAIL: " + email;
+        return output;
+    }//end toString
 }//end contacts class
