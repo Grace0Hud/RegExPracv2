@@ -1,11 +1,11 @@
-public class Contacts
+public class Contact
 {
     //variables
     private String name; //Must be all letters
     private String number;//in format (xxx)xxx-xxxx
     private String email;//in format (any amount of chars)@(any amount of chars).com
     //constructor
-    public Contacts(String name, String number, String email)
+    public Contact(String name, String number, String email)
     {
         this.name = name;
         this.number = number;
@@ -20,8 +20,9 @@ public class Contacts
     {
         String output;
         output  = "NAME: " + name;
-        output += "NUMBER: " + number;
-        output += "EMAIL: " + email;
+        output += "\nNUMBER: " + number;
+        output += "\nEMAIL: " + email;
+        output += "\n-------------------------------";
         return output;
     }//end toString
 }//end contacts class
