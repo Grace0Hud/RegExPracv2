@@ -7,11 +7,12 @@ public class Contact
     private String lastName;
     private String number;//in format (xxx)xxx-xxxx
     private String email;//in format (any amount of chars)@(any amount of chars).com
+    private Scanner scan = new Scanner(System.in);
     //constructor
     public Contact(String firstName, String lastName, String number, String email)
     {
         this.firstName = checkFirstName(firstName);
-        this.lastName = lastName;
+        this.lastName = checkLastName(lastName);
         this.number = number;
         this.email = email;
     }//end constructor
@@ -35,7 +36,7 @@ public class Contact
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        this.lastName = checkLastName(lastName);
     }
 
     public void setNumber(String number) {
@@ -49,10 +50,18 @@ public class Contact
 
     private String checkFirstName(String name)
     {
-        Scanner scan = new Scanner(System.in);
         while(!name.matches("[A-Z][a-z]+"))
         {
-            System.out.println("Invalid input, try again");
+            System.out.println("FIRSTNAME: Invalid input, try again");
+            name = scan.next();
+        }
+        return name;
+    }
+    private String checkLastName(String name)
+    {
+        while(!name.matches("[A-Z]([a-z]|-)+"))
+        {
+            System.out.println("LASTNAME: Invalid input, try again");
             name = scan.next();
         }
         return name;
