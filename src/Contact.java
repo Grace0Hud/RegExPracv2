@@ -7,13 +7,13 @@ public class Contact
     private String lastName;
     private String number;//in format (xxx)xxx-xxxx
     private String email;//in format (any amount of chars)@(any amount of chars).com
-    private Scanner scan = new Scanner(System.in);
+    private final Scanner scan = new Scanner(System.in);
     //constructor
     public Contact(String firstName, String lastName, String number, String email)
     {
         this.firstName = checkFirstName(firstName);
         this.lastName = checkLastName(lastName);
-        this.number = number;
+        this.number = checkNumber(number);
         this.email = email;
     }//end constructor
     //getters/setters
@@ -66,6 +66,16 @@ public class Contact
         }
         return name;
     }
+
+    private String checkNumber(String num)
+    {
+        while(!num.matches("\\([0-9]{3}\\)[0-9]{3}-[0-9]{4}"))
+        {
+            System.out.println("PHONE NUMBER: Invalid input, try again");
+            num = scan.next();
+        }
+        return num;
+    }//end checkNumber
 
     //tostring
     public String toString()
