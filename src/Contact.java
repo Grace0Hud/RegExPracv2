@@ -14,7 +14,7 @@ public class Contact
         this.firstName = checkFirstName(firstName);
         this.lastName = checkLastName(lastName);
         this.number = checkNumber(number);
-        this.email = email;
+        this.email = checkEmail(email);
     }//end constructor
     //getters/setters
 
@@ -40,11 +40,11 @@ public class Contact
     }
 
     public void setNumber(String number) {
-        this.number = number;
+        this.number = checkNumber(number);
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        this.email = checkEmail(email);
     }
     //brain methods - validation
 
@@ -76,6 +76,16 @@ public class Contact
         }
         return num;
     }//end checkNumber
+
+    private String checkEmail(String email)
+    {
+        while(!email.matches("[A-Za-z0-9]*@[a-z]*\\.(com|net|edu)"))
+        {
+            System.out.println("EMAIL: Invalid input, try again");
+            email = scan.next();
+        }
+        return email;
+    }//end checkEmail
 
     //tostring
     public String toString()
