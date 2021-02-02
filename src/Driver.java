@@ -19,6 +19,7 @@ public class Driver
 
          */
 
+        /*
         //testing last name validation
         System.out.println("Tried setting LAST NAME to: ");
         System.out.println("\"potter\"");
@@ -30,5 +31,17 @@ public class Driver
         System.out.println("LAST NAME set to: " + potter.getLastName());
         System.out.println("------------------------------");
 
+         */
+
+        //testing phone numbers
+        System.out.println("Tried setting NUMBER to: ");
+        System.out.println("\"9514851718\"");
+        potter.setNumber("9514851718");
+        System.out.println("\"(951)4851718\"");
+        potter.setNumber("(951)4851718");
+        System.out.println("\"nine\"");
+        potter.setNumber("nine");
+        System.out.println("NUMBER set to: " + potter.getNumber());
+        System.out.println("------------------------------");
     }//end main
 }//end class driver
