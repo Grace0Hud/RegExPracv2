@@ -6,7 +6,7 @@ public class Contact
     private String firstName; //Must be all letter
     private String lastName;
     private String number;//in format (xxx)xxx-xxxx
-    private String email;//in format (any amount of chars)@(any amount of chars).com
+    private String email;//in format (any amount of chars)@(any amount of chars).com/edu/net
     private final Scanner scan = new Scanner(System.in);
     //constructor
     public Contact(String firstName, String lastName, String number, String email)
@@ -79,7 +79,7 @@ public class Contact
 
     private String checkEmail(String email)
     {
-        while(!email.matches("[A-Za-z0-9]*@[a-z]*\\.(com|net|edu)"))
+        while(!email.matches("[A-Za-z0-9]+@[a-z]+\\.(com|net|edu)"))
         {
             System.out.println("EMAIL: Invalid input, try again");
             email = scan.next();

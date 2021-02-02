@@ -2,7 +2,7 @@ public class Driver
 {
     public static void main(String[] args)
     {
-        Contact cedar = new Contact("Cedar", "Hudgens", "(808)452-8456", "misc@mvusd");
+        Contact cedar = new Contact("Cedar", "Hudgens", "(808)452-8456", "misc@mvusd.net");
         System.out.println(cedar);
 
         /*
