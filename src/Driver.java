@@ -5,7 +5,7 @@ public class Driver
         Contact potter = new Contact("Harry", "Potter", "(808)452-8456", "misc@hogwarts.net");
         System.out.println(potter.toString());
 
-        /*
+        
         //testing first name validation
         System.out.println("Tried setting FIRST NAME to: ");
         System.out.println("\"ginny\"");
@@ -41,8 +41,6 @@ public class Driver
         System.out.println("NUMBER set to: " + potter.getNumber());
         System.out.println("------------------------------");
 
-         */
-
         System.out.println("Tried setting EMAIL to: ");
         System.out.println("\"potter\"");
         potter.setEmail("potter");
@@ -54,5 +52,8 @@ public class Driver
         potter.setEmail("potter@potter.abc");
         System.out.println("EMAIL set to: " + potter.getEmail());
         System.out.println("------------------------------");
+
+        System.out.println("FINAL OUTPUT: ");
+        System.out.println(potter.toString());
     }//end main
 }//end class driver
