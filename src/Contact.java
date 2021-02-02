@@ -51,7 +51,7 @@ public class Contact
     //letters
     private String checkFirstName(String name)
     {
-        while(!name.matches("[A-Z][a-z]+"))
+        while(!name.matches("[A-Z][A-Za-z]+"))
         {
             System.out.println("FIRSTNAME: Invalid input, try again");
             name = scan.next();
@@ -61,7 +61,7 @@ public class Contact
     //letters
     private String checkLastName(String name)
     {
-        while(!name.matches("[A-Z]([a-z]|-)+"))
+        while(!name.matches("[A-Z]([A-Za-z]|-)+"))
         {
             System.out.println("LASTNAME: Invalid input, try again");
             name = scan.next();
