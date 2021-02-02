@@ -2,15 +2,19 @@ public class Driver
 {
     public static void main(String[] args)
     {
-        Contact cedar = new Contact("Cedar", "Hudgens", "(808)452-8456", "misc@mvusd.net");
-        System.out.println(cedar);
+        Contact potter = new Contact("Harry", "Potter", "(808)452-8456", "misc@hogwarts.net");
+        System.out.println(potter.toString());
 
-        /*
-        System.out.println(cedar.getName());
-        System.out.println(cedar.getNumber());
-        cedar.setNumber("(951)236-8565");
-        System.out.println(cedar.getNumber());
+        //testing first name validation
+        System.out.println("Tried setting FIRST NAME to: ");
+        System.out.println("\"ginny\"");
+        potter.setFirstName("ginny");
+        System.out.println("\"G\"");
+        potter.setFirstName("G");
+        System.out.println("\"GINNY\"");
+        potter.setFirstName("GINNY");
+        System.out.println("FIRST NAME set to: " + potter.getFirstName());
+        System.out.println("------------------------------");
 
-         */
     }//end main
 }//end class driver

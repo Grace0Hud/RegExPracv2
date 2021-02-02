@@ -48,6 +48,7 @@ public class Contact
     }
     //brain methods - validation
 
+    //letters
     private String checkFirstName(String name)
     {
         while(!name.matches("[A-Z][a-z]+"))
@@ -57,6 +58,7 @@ public class Contact
         }
         return name;
     }
+    //letters
     private String checkLastName(String name)
     {
         while(!name.matches("[A-Z]([a-z]|-)+"))
@@ -67,6 +69,7 @@ public class Contact
         return name;
     }
 
+    //numbers/special characters
     private String checkNumber(String num)
     {
         while(!num.matches("\\([0-9]{3}\\)[0-9]{3}-[0-9]{4}"))
@@ -77,6 +80,7 @@ public class Contact
         return num;
     }//end checkNumber
 
+    //letters/special characters
     private String checkEmail(String email)
     {
         while(!email.matches("[A-Za-z0-9]+@[a-z]+\\.(com|net|edu)"))
