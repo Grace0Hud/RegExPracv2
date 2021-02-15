@@ -5,16 +5,18 @@ public class Contact
     //variables
     private String firstName; //Must be all letter
     private String lastName;
-    private String number;//in format (xxx)xxx-xxxx
+    private String homeNumber;//in format (xxx)xxx-xxxx
+    private String mobileNumber;
     private String email;//in format (any amount of chars)@(any amount of chars).com/edu/net
     private String address; //xxxxx (chars)
     private final Scanner scan = new Scanner(System.in);
     //constructor
-    public Contact(String firstName, String lastName, String number, String email, String address)
+    public Contact(String firstName, String lastName, String homeNumber, String mobileNumber, String email, String address)
     {
         this.firstName = checkFirstName(firstName);
         this.lastName = checkLastName(lastName);
-        this.number = checkNumber(number);
+        this.homeNumber = checkNumber(homeNumber);
+        this.mobileNumber = checkNumber(mobileNumber);
         this.email = checkEmail(email);
         this.address = address;
     }//end constructor
@@ -22,7 +24,8 @@ public class Contact
     {
         this. firstName = "";
         this.lastName = "";
-        this.number = "";
+        this.homeNumber = "";
+        this.mobileNumber = "";
         this.email = "";
         this.address = "";
     }
@@ -36,11 +39,15 @@ public class Contact
         return lastName;
     }
 
-    public String getNumber() { return number; }
+    public String getHomeNumber() { return homeNumber; }
     public String getEmail() { return email; }
 
     public String getAddress() {
         return address;
+    }
+
+    public String getMobileNumber() {
+        return mobileNumber;
     }
     //setters
 
@@ -53,8 +60,8 @@ public class Contact
         this.lastName = checkLastName(lastName);
     }
 
-    public void setNumber(String number) {
-        this.number = checkNumber(number);
+    public void setHomeNumber(String homeNumber) {
+        this.homeNumber = checkNumber(homeNumber);
     }
 
     public void setEmail(String email) {
@@ -63,6 +70,10 @@ public class Contact
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public void setMobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
     }
 
     //brain methods - validation
@@ -115,7 +126,8 @@ public class Contact
     {
         String output;
         output  = "NAME: " + firstName + " " + lastName;
-        output += "\nNUMBER: " + number;
+        output += "\nHOME NUMBER: " + homeNumber;
+        output += "\nMOBILE NUMBER: " + mobileNumber;
         output += "\nEMAIL: " + email;
         output += "\nADDRESS: " + address;
         output += "\n-------------------------------";
