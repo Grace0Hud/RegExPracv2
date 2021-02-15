@@ -16,6 +16,14 @@ public class Contact
         this.number = checkNumber(number);
         this.email = checkEmail(email);
     }//end constructor
+    public Contact()
+    {
+        this. firstName = "";
+        this.lastName = "";
+        this.number = "(xxx)xxx-xxxx";
+        this.email = "xxx@xxxx.com";
+    }
+
     //getters/setters
 
     //getters

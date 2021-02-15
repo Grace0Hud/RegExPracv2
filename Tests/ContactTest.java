@@ -12,4 +12,15 @@ class ContactTest
                 "\nEMAIL: potter@hogwarts.com\n-------------------------------";
         assertEquals(expected, contact.toString());
     }
+
+    @Test
+    void defaultConst()
+    {
+        Contact contact = new Contact();
+        String expected = "NAME:  \nNUMBER: (xxx)xxx-xxxx" +
+                "\nEMAIL: xxx@xxxx.com\n-------------------------------";
+        assertEquals(expected, contact.toString());
+    }
+
+
 }
