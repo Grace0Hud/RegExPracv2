@@ -7,21 +7,24 @@ public class Contact
     private String lastName;
     private String number;//in format (xxx)xxx-xxxx
     private String email;//in format (any amount of chars)@(any amount of chars).com/edu/net
+    private String address; //xxxxx (chars)
     private final Scanner scan = new Scanner(System.in);
     //constructor
-    public Contact(String firstName, String lastName, String number, String email)
+    public Contact(String firstName, String lastName, String number, String email, String address)
     {
         this.firstName = checkFirstName(firstName);
         this.lastName = checkLastName(lastName);
         this.number = checkNumber(number);
         this.email = checkEmail(email);
+        this.address = address;
     }//end constructor
     public Contact()
     {
         this. firstName = "";
         this.lastName = "";
-        this.number = "(xxx)xxx-xxxx";
-        this.email = "xxx@xxxx.com";
+        this.number = "";
+        this.email = "";
+        this.address = "";
     }
 
     //getters/setters
@@ -36,6 +39,9 @@ public class Contact
     public String getNumber() { return number; }
     public String getEmail() { return email; }
 
+    public String getAddress() {
+        return address;
+    }
     //setters
 
 
@@ -54,6 +60,11 @@ public class Contact
     public void setEmail(String email) {
         this.email = checkEmail(email);
     }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
     //brain methods - validation
 
     //letters
@@ -106,6 +117,7 @@ public class Contact
         output  = "NAME: " + firstName + " " + lastName;
         output += "\nNUMBER: " + number;
         output += "\nEMAIL: " + email;
+        output += "\nADDRESS: " + address;
         output += "\n-------------------------------";
         return output;
     }//end toString

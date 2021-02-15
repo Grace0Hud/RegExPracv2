@@ -7,9 +7,10 @@ class ContactTest
     @Test
     void constrToString()
     {
-        Contact contact = new Contact("Harry", "Potter", "(951)453-2344", "potter@hogwarts.com");
+        Contact contact = new Contact("Harry", "Potter", "(951)453-2344",
+                "potter@hogwarts.com", "25445 Cool Address Dr");
         String expected = "NAME: Harry Potter\nNUMBER: (951)453-2344" +
-                "\nEMAIL: potter@hogwarts.com\n-------------------------------";
+                "\nEMAIL: potter@hogwarts.com\nADDRESS: 25445 Cool Address Dr\n-------------------------------";
         assertEquals(expected, contact.toString());
     }
 
@@ -17,8 +18,8 @@ class ContactTest
     void defaultConst()
     {
         Contact contact = new Contact();
-        String expected = "NAME:  \nNUMBER: (xxx)xxx-xxxx" +
-                "\nEMAIL: xxx@xxxx.com\n-------------------------------";
+        String expected = "NAME:  \nNUMBER: " +
+                "\nEMAIL: \nADDRESS: \n-------------------------------";
         assertEquals(expected, contact.toString());
     }
 
@@ -56,5 +57,14 @@ class ContactTest
         contact.setEmail("djsla@jkldfaj.com");
         String expected = "djsla@jkldfaj.com";
         assertEquals(expected, contact.getEmail());
+    }
+
+    @Test
+    void addressGetnSet()
+    {
+        Contact contact = new Contact();
+        contact.setAddress("52368 Cool Adress Dr");
+        String expected = "52368 Cool Adress Dr";
+        assertEquals(expected, contact.getAddress());
     }
 }

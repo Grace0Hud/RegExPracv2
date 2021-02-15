@@ -2,6 +2,7 @@ public class Driver
 {
     public static void main(String[] args)
     {
+        /*
         Contact potter = new Contact("Harry", "Potter", "(808)452-8456", "misc@hogwarts.net");
         System.out.println(potter.toString());
 
@@ -55,5 +56,7 @@ public class Driver
 
         System.out.println("FINAL OUTPUT: ");
         System.out.println(potter.toString());
+
+         */
     }//end main
 }//end class driver
