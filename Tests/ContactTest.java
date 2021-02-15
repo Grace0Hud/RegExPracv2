@@ -22,5 +22,39 @@ class ContactTest
         assertEquals(expected, contact.toString());
     }
 
+    @Test
+    void firstNameGetnSet()
+    {
+        Contact contact = new Contact();
+        contact.setFirstName("Cedar");
+        String expected = "Cedar";
+        assertEquals(expected, contact.getFirstName());
+    }
 
+    @Test
+    void lastNameGetnSet()
+    {
+        Contact contact = new Contact();
+        contact.setFirstName("Cedar");
+        String expected = "Cedar";
+        assertEquals(expected, contact.getFirstName());
+    }
+
+    @Test
+    void numberGetnSet()
+    {
+        Contact contact = new Contact();
+        contact.setNumber("(921)321-2324");
+        String expected = "(921)321-2324";
+        assertEquals(expected, contact.getNumber());
+    }
+
+    @Test
+    void emailGetnSet()
+    {
+        Contact contact = new Contact();
+        contact.setEmail("djsla@jkldfaj.com");
+        String expected = "djsla@jkldfaj.com";
+        assertEquals(expected, contact.getEmail());
+    }
 }
