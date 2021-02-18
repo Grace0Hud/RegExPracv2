@@ -81,7 +81,7 @@ public class Contact
     //letters
     private String checkFirstName(String name)
     {
-        while(!name.matches("[A-Z][A-Za-z]+"))
+        if(!name.matches("[A-Z][A-Za-z]+"))
         {
             name = "invalid input";
         }
@@ -90,7 +90,7 @@ public class Contact
     //letters
     private String checkLastName(String name)
     {
-        while(!name.matches("[A-Z]([A-Za-z]|-)+"))
+        if(!name.matches("[A-Z]([A-Za-z]|-)+"))
         {
            name = "invalid input";
         }
@@ -100,7 +100,7 @@ public class Contact
     //numbers/special characters
     private String checkNumber(String num)
     {
-        while(!num.matches("\\([0-9]{3}\\)[0-9]{3}-[0-9]{4}"))
+        if(!num.matches("\\([0-9]{3}\\)[0-9]{3}-[0-9]{4}"))
         {
             num = "invalid input";
         }
@@ -110,7 +110,7 @@ public class Contact
     //letters/special characters
     private String checkEmail(String email)
     {
-        while(!email.matches("[A-Za-z0-9]+@[a-z]+\\.(com|net|edu)"))
+        if(!email.matches("[A-Za-z0-9]+@[a-z]+\\.(com|net|edu)"))
         {
             email = "invalid input";
         }

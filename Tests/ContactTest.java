@@ -35,6 +35,40 @@ class ContactTest
     }
 
     @Test
+    void firstNameLowerCase()
+    {
+        Contact contact = new Contact();
+        contact.setFirstName("cedar");
+        String expected = "invalid input";
+        assertEquals(expected, contact.getFirstName());
+    }
+
+    @Test
+    void firstNameNumbers()
+    {
+        Contact contact = new Contact();
+        contact.setFirstName("C23685");
+        String expected = "invalid input";
+        assertEquals(expected, contact.getFirstName());
+    }
+    @Test
+    void firstNameOneLetter()
+    {
+        Contact contact = new Contact();
+        contact.setFirstName("C");
+        String expected = "invalid input";
+        assertEquals(expected, contact.getFirstName());
+    }
+
+    @Test
+    void firstNameCapAfterStart()
+    {
+        Contact contact = new Contact();
+        contact.setFirstName("CeDar");
+        String expected = "CeDar";
+        assertEquals(expected, contact.getFirstName());
+    }
+    @Test
     void lastNameGetnSet()
     {
         Contact contact = new Contact();
