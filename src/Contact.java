@@ -83,8 +83,7 @@ public class Contact
     {
         while(!name.matches("[A-Z][A-Za-z]+"))
         {
-            System.out.println("FIRSTNAME: Invalid input, try again");
-            name = scan.next();
+            name = "invalid input";
         }
         return name;
     }
@@ -93,8 +92,7 @@ public class Contact
     {
         while(!name.matches("[A-Z]([A-Za-z]|-)+"))
         {
-            System.out.println("LASTNAME: Invalid input, try again");
-            name = scan.next();
+           name = "invalid input";
         }
         return name;
     }
@@ -104,8 +102,7 @@ public class Contact
     {
         while(!num.matches("\\([0-9]{3}\\)[0-9]{3}-[0-9]{4}"))
         {
-            System.out.println("PHONE NUMBER: Invalid input, try again");
-            num = scan.next();
+            num = "invalid input";
         }
         return num;
     }//end checkNumber
@@ -115,8 +112,7 @@ public class Contact
     {
         while(!email.matches("[A-Za-z0-9]+@[a-z]+\\.(com|net|edu)"))
         {
-            System.out.println("EMAIL: Invalid input, try again");
-            email = scan.next();
+            email = "invalid input";
         }
         return email;
     }//end checkEmail
