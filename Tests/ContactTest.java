@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ContactTest
 {
+    //const tests
     @Test
     void constrToString()
     {
@@ -25,6 +26,7 @@ class ContactTest
         assertEquals(expected, contact.toString());
     }
 
+    //first name tests
     @Test
     void firstNameGetnSet()
     {
@@ -68,15 +70,49 @@ class ContactTest
         String expected = "CeDar";
         assertEquals(expected, contact.getFirstName());
     }
+
+    //last name tests
     @Test
     void lastNameGetnSet()
     {
         Contact contact = new Contact();
-        contact.setLastName("Cedar");
-        String expected = "Cedar";
+        contact.setLastName("Tree");
+        String expected = "Tree";
         assertEquals(expected, contact.getLastName());
     }
-
+    @Test
+    void lastNameStartsCap()
+    {
+        Contact contact = new Contact();
+        contact.setLastName("tree");
+        String expected = "invalid input";
+        assertEquals(expected, contact.getLastName());
+    }
+    @Test
+    void lastNameNoNums()
+    {
+        Contact contact = new Contact();
+        contact.setLastName("T45646546");
+        String expected = "invalid input";
+        assertEquals(expected, contact.getLastName());
+    }
+    @Test
+    void lastNameHyphen()
+    {
+        Contact contact = new Contact();
+        contact.setLastName("Cool-Tree");
+        String expected = "Cool-Tree";
+        assertEquals(expected, contact.getLastName());
+    }
+    @Test
+    void lastNameOneLetter()
+    {
+        Contact contact = new Contact();
+        contact.setLastName("T");
+        String expected = "invalid input";
+        assertEquals(expected, contact.getLastName());
+    }
+    //number tests
     @Test
     void homeNumberGetnSet()
     {
@@ -85,7 +121,16 @@ class ContactTest
         String expected = "(921)321-2324";
         assertEquals(expected, contact.getHomeNumber());
     }
+    @Test
+    void mobileNumberGetnSet()
+    {
+        Contact contact = new Contact();
+        contact.setMobileNumber("(921)321-2324");
+        String expected = "(921)321-2324";
+        assertEquals(expected, contact.getMobileNumber());
+    }
 
+    //email tests
     @Test
     void emailGetnSet()
     {
@@ -95,6 +140,7 @@ class ContactTest
         assertEquals(expected, contact.getEmail());
     }
 
+    //address tests
     @Test
     void addressGetnSet()
     {
@@ -104,12 +150,4 @@ class ContactTest
         assertEquals(expected, contact.getAddress());
     }
 
-    @Test
-    void mobileNumberGetnSet()
-    {
-        Contact contact = new Contact();
-        contact.setMobileNumber("(921)321-2324");
-        String expected = "(921)321-2324";
-        assertEquals(expected, contact.getMobileNumber());
-    }
 }
