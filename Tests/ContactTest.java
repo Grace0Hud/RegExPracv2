@@ -195,7 +195,38 @@ class ContactTest
         String expected = "djsla@jkldfaj.com";
         assertEquals(expected, contact.getEmail());
     }
-
+    @Test
+    void emailNoAt()
+    {
+        Contact contact = new Contact();
+        contact.setEmail("djslajkldfaj.com");
+        String expected = "invalid input";
+        assertEquals(expected, contact.getEmail());
+    }
+    @Test
+    void emailNoDot()
+    {
+        Contact contact = new Contact();
+        contact.setEmail("djsla@jkldfajcom");
+        String expected = "invalid input";
+        assertEquals(expected, contact.getEmail());
+    }
+    @Test
+    void emailNotValidDot()
+    {
+        Contact contact = new Contact();
+        contact.setEmail("djsla@jkldfaj.djk");
+        String expected = "invalid input";
+        assertEquals(expected, contact.getEmail());
+    }
+    @Test
+    void emailLettersAndNums()
+    {
+        Contact contact = new Contact();
+        contact.setEmail("potter3@jkldfaj.com");
+        String expected = "potter3@jkldfaj.com";
+        assertEquals(expected, contact.getEmail());
+    }
     //address tests
     @Test
     void addressGetnSet()
