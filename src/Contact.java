@@ -18,7 +18,7 @@ public class Contact
         this.homeNumber = checkNumber(homeNumber);
         this.mobileNumber = checkNumber(mobileNumber);
         this.email = checkEmail(email);
-        this.address = address;
+        this.address = checkAddress(address);
     }//end constructor
     public Contact()
     {
@@ -69,7 +69,7 @@ public class Contact
     }
 
     public void setAddress(String address) {
-        this.address = address;
+        this.address = checkAddress(address);
     }
 
     public void setMobileNumber(String mobileNumber) {
@@ -117,6 +117,14 @@ public class Contact
         return email;
     }//end checkEmail
 
+    private String checkAddress(String address)
+    {
+        if(!address.matches("[0-9]{5}\\s([A-Za-z]|\\s)+"))
+        {
+            address = "invalid input";
+        }
+        return address;
+    }
     //tostring
     public String toString()
     {

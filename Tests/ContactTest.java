@@ -236,5 +236,50 @@ class ContactTest
         String expected = "52368 Cool Adress Dr";
         assertEquals(expected, contact.getAddress());
     }
+    @Test
+    void addressFirst5Nums()
+    {
+        Contact contact = new Contact();
+        contact.setAddress("hjkkl Cool Adress Dr");
+        String expected = "invalid input";
+        assertEquals(expected, contact.getAddress());
+    }
+
+    @Test
+    void addressNumsInStName()
+    {
+        Contact contact = new Contact();
+        contact.setAddress("25648 Co0l Adress Dr");
+        String expected = "invalid input";
+        assertEquals(expected, contact.getAddress());
+    }
+
+    @Test
+    void addressNoStreet()
+    {
+        Contact contact = new Contact();
+        contact.setAddress("45648");
+        String expected = "invalid input";
+        assertEquals(expected, contact.getAddress());
+    }
+
+    @Test
+    void addressSymbols()
+    {
+        Contact contact = new Contact();
+        contact.setAddress("21548 Cool Adre$$ Dr");
+        String expected = "invalid input";
+        assertEquals(expected, contact.getAddress());
+    }
+
+    @Test
+    void addressNotEnoughNums()
+    {
+        Contact contact = new Contact();
+        contact.setAddress("25 Cool Adress Dr");
+        String expected = "invalid input";
+        assertEquals(expected, contact.getAddress());
+    }
+
 
 }
