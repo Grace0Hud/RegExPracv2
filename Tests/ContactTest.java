@@ -122,7 +122,7 @@ class ContactTest
         assertEquals(expected, contact.getHomeNumber());
     }
     @Test
-    void numberWrongLength()
+    void homeNumberWrongLength()
     {
         Contact contact = new Contact();
         contact.setHomeNumber("(921)321-232464");
@@ -130,7 +130,7 @@ class ContactTest
         assertEquals(expected, contact.getHomeNumber());
     }
     @Test
-    void numberWrongLengthBeforeHyphen()
+    void homeNumberWrongLengthBeforeHyphen()
     {
         Contact contact = new Contact();
         contact.setHomeNumber("(921)3215465-2324");
@@ -138,7 +138,7 @@ class ContactTest
         assertEquals(expected, contact.getHomeNumber());
     }
     @Test
-    void numberNoParenth()
+    void homeNumberNoParenth()
     {
         Contact contact = new Contact();
         contact.setHomeNumber("921321-2324");
@@ -146,7 +146,7 @@ class ContactTest
         assertEquals(expected, contact.getHomeNumber());
     }
     @Test
-    void numberNoHyphen()
+    void homeNumberNoHyphen()
     {
         Contact contact = new Contact();
         contact.setHomeNumber("(921)3212324");
@@ -154,7 +154,7 @@ class ContactTest
         assertEquals(expected, contact.getHomeNumber());
     }
     @Test
-    void numberJustNums()
+    void homeNumberJustNums()
     {
         Contact contact = new Contact();
         contact.setHomeNumber("9213212324");
@@ -162,7 +162,7 @@ class ContactTest
         assertEquals(expected, contact.getHomeNumber());
     }
     @Test
-    void numberLetters()
+    void homeNumberLetters()
     {
         Contact contact = new Contact();
         contact.setHomeNumber("nine");
@@ -170,7 +170,7 @@ class ContactTest
         assertEquals(expected, contact.getHomeNumber());
     }
     @Test
-    void numberOtherSymbols()
+    void homeNumberOtherSymbols()
     {
         Contact contact = new Contact();
         contact.setHomeNumber("@951)234-2344");
@@ -183,6 +183,62 @@ class ContactTest
         Contact contact = new Contact();
         contact.setMobileNumber("(921)321-2324");
         String expected = "(921)321-2324";
+        assertEquals(expected, contact.getMobileNumber());
+    }
+    @Test
+    void mobileNumberWrongLength()
+    {
+        Contact contact = new Contact();
+        contact.setMobileNumber("(921)321-232464");
+        String expected = "invalid input";
+        assertEquals(expected, contact.getMobileNumber());
+    }
+    @Test
+    void mobileNumberWrongLengthBeforeHyphen()
+    {
+        Contact contact = new Contact();
+        contact.setMobileNumber("(921)3215465-2324");
+        String expected = "invalid input";
+        assertEquals(expected, contact.getMobileNumber());
+    }
+    @Test
+    void mobileNumberNoParenth()
+    {
+        Contact contact = new Contact();
+        contact.setMobileNumber("921321-2324");
+        String expected = "invalid input";
+        assertEquals(expected, contact.getMobileNumber());
+    }
+    @Test
+    void mobileNumberNoHyphen()
+    {
+        Contact contact = new Contact();
+        contact.setMobileNumber("(921)3212324");
+        String expected = "invalid input";
+        assertEquals(expected, contact.getMobileNumber());
+    }
+    @Test
+    void mobileNumberJustNums()
+    {
+        Contact contact = new Contact();
+        contact.setMobileNumber("9213212324");
+        String expected = "invalid input";
+        assertEquals(expected, contact.getMobileNumber());
+    }
+    @Test
+    void mobileNumberLetters()
+    {
+        Contact contact = new Contact();
+        contact.setMobileNumber("nine");
+        String expected = "invalid input";
+        assertEquals(expected, contact.getMobileNumber());
+    }
+    @Test
+    void mobileNumberOtherSymbols()
+    {
+        Contact contact = new Contact();
+        contact.setMobileNumber("@951)234-2344");
+        String expected = "invalid input";
         assertEquals(expected, contact.getMobileNumber());
     }
 

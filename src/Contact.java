@@ -73,7 +73,7 @@ public class Contact
     }
 
     public void setMobileNumber(String mobileNumber) {
-        this.mobileNumber = mobileNumber;
+        this.mobileNumber = checkNumber(mobileNumber);
     }
 
     //brain methods - validation
