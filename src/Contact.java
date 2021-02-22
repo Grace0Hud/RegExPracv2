@@ -9,9 +9,10 @@ public class Contact
     private String mobileNumber;
     private String email;//in format (any amount of chars)@(any amount of chars).com/edu/net
     private String address; //xxxxx (chars)
+    private String notes;
     private final Scanner scan = new Scanner(System.in);
     //constructor
-    public Contact(String firstName, String lastName, String homeNumber, String mobileNumber, String email, String address)
+    public Contact(String firstName, String lastName, String homeNumber, String mobileNumber, String email, String address, String notes)
     {
         this.firstName = checkFirstName(firstName);
         this.lastName = checkLastName(lastName);
@@ -19,6 +20,7 @@ public class Contact
         this.mobileNumber = checkNumber(mobileNumber);
         this.email = checkEmail(email);
         this.address = checkAddress(address);
+        this.notes = checkNotes(notes);
     }//end constructor
     public Contact()
     {
@@ -28,6 +30,7 @@ public class Contact
         this.mobileNumber = "";
         this.email = "";
         this.address = "";
+        this.notes = "";
     }
 
     //getters/setters
@@ -48,6 +51,10 @@ public class Contact
 
     public String getMobileNumber() {
         return mobileNumber;
+    }
+
+    public String getNotes() {
+        return notes;
     }
     //setters
 
@@ -76,6 +83,9 @@ public class Contact
         this.mobileNumber = checkNumber(mobileNumber);
     }
 
+    public void setNotes(String notes) {
+        this.notes = checkNotes(notes);
+    }
     //brain methods - validation
 
     //letters
@@ -125,6 +135,19 @@ public class Contact
         }
         return address;
     }
+    private String checkNotes(String notes)
+    {
+        if(notes.length() > 51)
+        {
+            String output = "";
+            for(int i = 0;i < 50;i++)
+            {
+                output += notes.charAt(i);
+            }
+            notes = output;
+        }
+        return notes;
+    }
     //tostring
     public String toString()
     {
@@ -134,6 +157,7 @@ public class Contact
         output += "\nMOBILE NUMBER: " + mobileNumber;
         output += "\nEMAIL: " + email;
         output += "\nADDRESS: " + address;
+        output += "\nNOTES: " + notes;
         output += "\n-------------------------------";
         return output;
     }//end toString

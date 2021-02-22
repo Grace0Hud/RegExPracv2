@@ -9,9 +9,9 @@ class ContactTest
     void constrToString()
     {
         Contact contact = new Contact("Harry", "Potter", "(951)453-2344",
-                "(951)546-2344", "potter@hogwarts.com", "25445 Cool Address Dr");
+                "(951)546-2344", "potter@hogwarts.com", "25445 Cool Address Dr", "Cool scar");
         String expected = "NAME: Harry Potter\nHOME NUMBER: (951)453-2344" +
-                "\nMOBILE NUMBER: (951)546-2344\nEMAIL: potter@hogwarts.com\nADDRESS: 25445 Cool Address Dr" +
+                "\nMOBILE NUMBER: (951)546-2344\nEMAIL: potter@hogwarts.com\nADDRESS: 25445 Cool Address Dr\nNOTES: Cool scar" +
                 "\n-------------------------------";
         assertEquals(expected, contact.toString());
     }
@@ -19,9 +19,9 @@ class ContactTest
     void invalidConstr()
     {
         Contact contact = new Contact("harry", "potter", "(951453-2344",
-                "(51)546-2344", "potterhogwarts.com", "2544 Cool Address Dr");
+                "(51)546-2344", "potterhogwarts.com", "2544 Cool Address Dr", "012345678901234567890123456789012345678901234567890123456789");
         String expected = "NAME: invalid input invalid input\nHOME NUMBER: invalid input" +
-                "\nMOBILE NUMBER: invalid input\nEMAIL: invalid input\nADDRESS: invalid input" +
+                "\nMOBILE NUMBER: invalid input\nEMAIL: invalid input\nADDRESS: invalid input\nNOTES: 01234567890123456789012345678901234567890123456789" +
                 "\n-------------------------------";
         assertEquals(expected, contact.toString());
     }
@@ -29,9 +29,9 @@ class ContactTest
     void constrInvalidFirstName()
     {
         Contact contact = new Contact("arry", "Potter", "(951)453-2344",
-                "(951)546-2344", "potter@hogwarts.com", "25445 Cool Address Dr");
+                "(951)546-2344", "potter@hogwarts.com", "25445 Cool Address Dr", "cool scar");
         String expected = "NAME: invalid input Potter\nHOME NUMBER: (951)453-2344" +
-                "\nMOBILE NUMBER: (951)546-2344\nEMAIL: potter@hogwarts.com\nADDRESS: 25445 Cool Address Dr" +
+                "\nMOBILE NUMBER: (951)546-2344\nEMAIL: potter@hogwarts.com\nADDRESS: 25445 Cool Address Dr\nNOTES: cool scar" +
                 "\n-------------------------------";
         assertEquals(expected, contact.toString());
     }
@@ -40,11 +40,35 @@ class ContactTest
     {
         Contact contact = new Contact();
         String expected = "NAME:  \nHOME NUMBER: " +
-                "\nMOBILE NUMBER: \nEMAIL: \nADDRESS: " +
+                "\nMOBILE NUMBER: \nEMAIL: \nADDRESS: \nNOTES: " +
                 "\n-------------------------------";
         assertEquals(expected, contact.toString());
     }
-
+    //notes
+    @Test
+    void notesGetNSet()
+    {
+        Contact contact = new Contact();
+        contact.setNotes("cool scar");
+        String expected = "cool scar";
+        assertEquals(expected, contact.getNotes());
+    }
+    @Test
+    void notesToLong()
+    {
+        Contact contact = new Contact();
+        contact.setNotes("012345678901234567890123456789012345678901234567890123456789");
+        String expected = "01234567890123456789012345678901234567890123456789";
+        assertEquals(expected, contact.getNotes());
+    }
+    @Test
+    void notesLength50()
+    {
+        Contact contact = new Contact();
+        contact.setNotes("01234567890123456789012345678901234567890123456789");
+        String expected = "01234567890123456789012345678901234567890123456789";
+        assertEquals(expected, contact.getNotes());
+    }
     //first name tests
     @Test
     void firstNameGetnSet()
