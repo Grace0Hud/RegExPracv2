@@ -15,7 +15,26 @@ class ContactTest
                 "\n-------------------------------";
         assertEquals(expected, contact.toString());
     }
-
+    @Test
+    void invalidConstr()
+    {
+        Contact contact = new Contact("harry", "potter", "(951453-2344",
+                "(51)546-2344", "potterhogwarts.com", "2544 Cool Address Dr");
+        String expected = "NAME: invalid input invalid input\nHOME NUMBER: invalid input" +
+                "\nMOBILE NUMBER: invalid input\nEMAIL: invalid input\nADDRESS: invalid input" +
+                "\n-------------------------------";
+        assertEquals(expected, contact.toString());
+    }
+    @Test
+    void constrInvalidFirstName()
+    {
+        Contact contact = new Contact("arry", "Potter", "(951)453-2344",
+                "(951)546-2344", "potter@hogwarts.com", "25445 Cool Address Dr");
+        String expected = "NAME: invalid input Potter\nHOME NUMBER: (951)453-2344" +
+                "\nMOBILE NUMBER: (951)546-2344\nEMAIL: potter@hogwarts.com\nADDRESS: 25445 Cool Address Dr" +
+                "\n-------------------------------";
+        assertEquals(expected, contact.toString());
+    }
     @Test
     void defaultConst()
     {
